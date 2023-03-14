@@ -8,7 +8,7 @@ import './App.css';
  */
 interface IState {
   data: ServerRespond[],
-  showGraph:boolean
+  showGraph: boolean, // add showGraph property with boolean type
 }
 
 /**
@@ -23,7 +23,7 @@ class App extends Component<{}, IState> {
       // data saves the server responds.
       // We use this state to parse data down to the child element (Graph) as element property
       data: [],
-      showGraph:false,
+      showGraph: false, // set the graph as hidden before user clicks 'Start Streaming Data'
     };
   }
 
@@ -31,8 +31,9 @@ class App extends Component<{}, IState> {
    * Render Graph react component with state.data parse as property data
    */
   renderGraph() {
-    if(this.state.showGraph)
+    if(this.state.showGraph){ // when user clicks the button then it gonna show
       return (<Graph data={this.state.data}/>)
+    }
   }
 
   /**
@@ -50,10 +51,10 @@ class App extends Component<{}, IState> {
         });
       });
       x++;
-      if(x>1000){
+      if(x > 1000){
         clearInterval(interval);
       }
-    }, 100);
+    }, 100); // now the server get data contiuously instead of everytime when user click the button
   }
 
   /**
