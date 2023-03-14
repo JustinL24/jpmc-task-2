@@ -47,7 +47,7 @@ class Graph extends Component<IProps, {}> {
     if (this.table) {
       // Load the `table` in the `<perspective-viewer>` DOM reference.
 
-      // Add more Perspective configurations here.
+      // Add more Perspective configurations here done.
       elem.load(this.table);
       elem.setAttribute('view', 'y_line'); //visualize the data with grid type
       elem.setAttribute('column-pivots', '["stock"]'); // distinguish stock ABC from DEF

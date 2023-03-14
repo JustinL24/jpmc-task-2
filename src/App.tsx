@@ -58,7 +58,7 @@ class App extends Component<{}, IState> {
   }
 
   /**
-   * Render the App react component
+   * Render the App react component done
    */
   render() {
     return (
